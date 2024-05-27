@@ -1,0 +1,19 @@
+name: Reusable Workflow use
+on: 
+  workflow_dispatch:
+jobs:
+  do-it:
+    runs-on: ubuntu-latest
+    steps:
+      -  uses: actions/checkout@v2
+      -  name: Run a one-line script
+         run: echo Hello Aman
+  docker:
+    uses: aman2575/ArgoCD-NodeApp/.github/workflows/Build_and_Push_Docker_Images.yml@main
+    with:
+      image_name: node-hello
+      tag: $GITHUB_RUN_NUMBER
+    secrets: 
+      dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
+      dockerhub_password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
