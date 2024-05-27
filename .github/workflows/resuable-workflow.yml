@@ -9,7 +9,8 @@ jobs:
       -  name: Run a one-line script
          run: echo Hello Aman
   docker:
-    uses: aman2575/ArgoCD-NodeApp/.github/workflows/Build_and_Push_Docker_Images.yml@main
+    
+    uses: aman2575/ArgoCD-NodeApp/.github/workflows/Build_and_Push_Docker_Images.yml@master
     with:
       image_name: node-hello
       tag: $GITHUB_RUN_NUMBER
