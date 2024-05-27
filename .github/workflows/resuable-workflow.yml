@@ -15,5 +15,6 @@ jobs:
       image_name: node-hello
       tag: $GITHUB_RUN_NUMBER
     secrets:
-      envPAT: ${{ secrets.envPAT }}
+      username: ${{ secrets.DOCKERHUB_USERNAME }}
+      password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
